@@ -130,12 +130,23 @@ using namespace std;
 
 int main()
 {
-    int a;
-    srand();
-        cout << rand() << endl;
+    
+    srand(time(NULL));
+        cout << ((rand() % 5) + 3) << endl; // 1.
+    
+        int minNum;
+        int maxNum;
+        cout << "가장 작은 값을 입력해주세요." << endl;
+       cin >> minNum;
+        cout << "가장 큰 값을 입력해주세요." << endl;
+        cin >> maxNum;
+        srand(time(NULL));
+        cout << ((rand() % maxNum) + minNum) << endl; // 2.
 
-
-
+        srand(time(NULL));
+        int answer;
+        cin >> answer;
+        ((rand() % 10) + 1 == answer) ? cout << "정답입니다!" : cout << "오답입니다.." << endl;
 
 
 
