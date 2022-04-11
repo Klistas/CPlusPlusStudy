@@ -62,14 +62,46 @@ int main()
     */
 
     int customer_age;
+    
+    cout << "고객님의 나이를 입력하세요." << endl;
+    cin >> customer_age; 
+    
+    cout << boolalpha;
+    cout << "고객님의 나이는 " << customer_age << "입니다." << endl;
+    cout << "고객님은 미성년자가" << (customer_age <= 19) << " 입니다." << endl;
+    cout << "고객님은 주민등록증 발급 대상이 " << (customer_age == 20) << " 입니다." << endl;
+    cout << "고객님은 아홉수가 " << (customer_age % 10) == 9 << " 입니다." << endl;
 
-    cout << "고객의 나이를 입력하세요 : ";
-    cin >> customer_age;
 
-    cout << boolalpha; // 1 or 0 인 true false 값을 true false로 바꿔줌! 
-    cout << "고객님은 미성년자 " << (customer_age <= 19) << "입니다." << endl;
-    cout << "고객님은 주민등록발급대상 " << (customer_age == 20) << "입니다." << endl;
-    cout << "고객님은 아홉수 " << ((customer_age % 10) == 9) << "입니다." << endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //int customer_age;
+
+    //cout << "고객의 나이를 입력하세요 : ";
+    //cin >> customer_age;
+
+    //cout << boolalpha; // 1 or 0 인 true false 값을 true false로 바꿔줌! 
+    //cout << "고객님은 미성년자 " << (customer_age <= 19) << "입니다." << endl;
+    //cout << "고객님은 주민등록발급대상 " << (customer_age == 20) << "입니다." << endl;
+    //cout << "고객님은 아홉수 " << ((customer_age % 10) == 9) << "입니다." << endl;
     
     
     
