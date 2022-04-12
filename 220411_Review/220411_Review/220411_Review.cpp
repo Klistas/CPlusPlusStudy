@@ -368,46 +368,276 @@ int main()
          
       */   
          
-        /*
-        별찍기
-        1)
-        *
-        * *
-        * **
-        * ***
-        * ****
+
+        //과제 1.
+        for (int starNum = 0; starNum < 5; starNum++)
+           {
+               for (int leftNum = 0; leftNum < 5; leftNum++)
+
+               {
+                 
+                      
+                  if (starNum == leftNum)
+                       {
+                           break;
+                       }
+                  cout << "*";
+                  
+               }
+               cout << "*" << endl;
+           }
         
-        2)
-               *
-              ** 
-             *** 
-        
-        3)
+                
+        //과제 2.
+        for (int starNum = 0; starNum < 5; starNum++)
+           {
+            for (int leftNum = 5; leftNum > 0; leftNum--)
 
+            {
+               
+               if (starNum == leftNum)
+                {
+                 break;
+                }
+               cout << " ";
+            }
 
+            for (int rightNum = 0; rightNum < 5; rightNum++)
 
-        4)
-
-        5)
-
-        6)
-
-        7)
-        */
-        
-        
-        for (int i = 1; i < 10; i++)
-        {
-            
-            while (1)
             {
                 cout << "*";
-                if (i < 10)
+                if (starNum == rightNum)
                 {
                     break;
                 }
+                
             }
             cout << endl;
+         }
+        
+        
+        //과제 3.
+        for (int starNum = 0; starNum < 5; starNum++)
+        {
+            for (int leftNum = 5; leftNum > 0; leftNum--)
+
+            {
+
+               if (starNum == leftNum)
+                {
+                 break;
+                }
+               cout << "*";
+            }
+
+            for (int rightNum = 0; rightNum < 5; rightNum++)
+
+            {
+                cout << " ";
+                if (starNum == rightNum)
+                {
+                    break;
+                }
+
+            }
+            cout << endl;
+         }
+             
+        
+        //과제 4.
+        for (int starNum = 0; starNum < 5; starNum++)
+        {
+            
+
+            for (int rightNum = 0; rightNum < 5; rightNum++)
+
+            {
+                
+                if (starNum == rightNum)
+                {
+                    break;
+                }
+                cout << " ";
+            }
+            
+            for (int leftNum = 5; leftNum > 0; leftNum--)
+
+            {
+
+                if (starNum == leftNum)
+                {
+                    break;
+                }
+                cout << "*";
+            }
+
+            cout << endl;
+         }
+
+
+        //과제 5.
+        for (int starNum = 0; starNum < 5; starNum++)
+        {
+            for (int leftNum = 4; leftNum > 0; leftNum--)
+
+            {
+
+                if (starNum == leftNum)
+                {
+                    break;
+                }
+                cout << " ";
+            }
+
+            for (int middleNum = 0; middleNum < 5; middleNum++)
+
+            {
+                cout << "*";
+                if (starNum == middleNum)
+                {
+                    break;
+                }
+
+            }
+            
+            for (int rightnum = 0; rightnum < 4; rightnum++)
+
+            {
+
+                if (starNum == rightnum)
+                {
+                    break;
+                }
+                cout << "*";
+            }
+            cout << endl;
+        }
+
+        
+        //과제 6.
+        for (int starNum = 0; starNum < 5; starNum++)
+        {
+
+            for (int leftNum = 0; leftNum < 5; leftNum++)
+
+            {
+                
+                if (starNum == leftNum)
+                {
+                    break;
+                }
+                cout << " ";
+            }
+
+            for (int middleNum = 5; middleNum > 0; middleNum--)
+
+            {
+                
+                if (starNum == middleNum)
+                {
+                    break;
+                }
+                cout << "*";
+            }
+
+            for (int rightNum = 4; rightNum > 0; rightNum--)
+
+            {
+                
+                if (starNum == rightNum)
+                {
+                    break;
+                }
+                cout << "*";
+            }
+            cout << endl;
+        }
+
+
+        //과제 7.
+        
+        for (int starNum = 0; starNum < 5; starNum++)
+        {
+
+            for (int leftNum = 4; leftNum > 0; leftNum--)
+
+            {
+
+                if (starNum == leftNum)
+                {
+                    break;
+                }
+                cout << " ";
+            }
+
+            for (int middleNum = 0; middleNum < 5; middleNum++)
+
+            {
+                cout << "*";
+                if (starNum == middleNum)
+                {
+                    break;
+                }
+
+            }
+
+            for (int rightNum = 0; rightNum < 5; rightNum++)
+
+            {
+
+                if (starNum == rightNum)
+                {
+                    break;
+                }
+                cout << "*";
+
+            }
+
+            cout << endl;
+
+        }
+            
+        for (int starNum = 0; starNum < 5; starNum++)
+        {
+                for (int leftNum = 0; leftNum < 5; leftNum++)
+
+                {
+                    cout << " ";
+                    if (starNum == leftNum)
+                    {
+                        break;
+                    }
+                    
+                }
+                
+                for (int middleNum = 4; middleNum > 0; middleNum--)
+
+                {
+                    
+                    if (starNum == middleNum)
+                    {
+                        break;
+                    }
+                    cout << "*";
+                }
+
+
+                for (int rightnum = 3; rightnum > 0; rightnum--)
+
+                {
+                    
+                   
+                    if (starNum == rightnum)
+                    {
+                        break;
+                    }
+                    cout << "*";
+                }
+
+
+                cout << endl;
+
+            
         }
 
 
