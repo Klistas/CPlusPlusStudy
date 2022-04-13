@@ -597,24 +597,24 @@ int main()
 
         }
             
-        for (int starNum = 0; starNum < 5; starNum++)
+        for (int starnum = 0; starnum < 4; starnum++)
         {
-                for (int leftNum = 0; leftNum < 5; leftNum++)
+                for (int leftnum = 0; leftnum < 4; leftnum++)
 
                 {
                     cout << " ";
-                    if (starNum == leftNum)
+                    if (starnum == leftnum)
                     {
                         break;
                     }
                     
                 }
                 
-                for (int middleNum = 4; middleNum > 0; middleNum--)
+                for (int middlenum = 4; middlenum > 0; middlenum--)
 
                 {
                     
-                    if (starNum == middleNum)
+                    if (starnum == middlenum)
                     {
                         break;
                     }
@@ -627,7 +627,7 @@ int main()
                 {
                     
                    
-                    if (starNum == rightnum)
+                    if (starnum == rightnum)
                     {
                         break;
                     }
@@ -635,7 +635,7 @@ int main()
                 }
 
 
-                cout << endl;
+               cout << endl;
 
             
         }
