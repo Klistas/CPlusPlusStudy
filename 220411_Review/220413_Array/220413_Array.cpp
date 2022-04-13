@@ -35,7 +35,7 @@ int main()
 				#######E##
 				##########
 				##########
-				
+
 			2. 플레이어가 존재한다.(0,0)
 
 			3. 탈출지점이 존재한다.(0,0) 제외 랜덤 설정
@@ -45,13 +45,42 @@ int main()
 			5. 플레이어가 탈출지점에 도달하면 "탈출에 성공했습니다!" 프로그램 종료.
 
 			※ 화면갱신 명령어 : system("cls");
+			
+		
+	
+	mapNum[x][y] = ;
+	for (int i = 0; i < 1; i++)
+				{
+
+
+					button = _getch();
+					system("cls");
+					
+				}
+				if (mapNum[escapeX][escapeY] == mapNum[x][y])
+				{
+					mapNum[x][y] = 66;
+				}
+			 else if (mapNum[playerX][playerY] == mapNum[x][y])
+				 {
+					 mapNum[x][y] = 65;
+					 switch (button)
+		{
+		case 119: playerX - 1;
+
+		case 115: playerX += 1;
+
+		case 97: playerY + 1;
+
+		case 100: playerY += 1;
+		}
 
 	*/
 
 	/*srand(time(NULL));
 	char answerNum;
 	int correctNum = ((rand() % 26) + 65);
-	
+
 	cout << "알파벳 맞추기 게임에 오신것을 환영합니다!" << endl << endl << "정답을 입력해주세요!" << endl << endl;
 
 
@@ -59,7 +88,7 @@ int main()
 	{
 		cout << "미리보는 정답 : " << (char)correctNum << endl << endl;
 		answerNum = _getch();
-		
+
 		cout << "정답 : " << answerNum << endl << endl;
 
 		if (answerNum < 95)
@@ -119,78 +148,101 @@ int main()
 					cout << "HINT! 정답은 " << answerNum << "보다 뒤에 있습니다." << endl << endl;
 				}
 			}
-			
+
 			cout << endl;
-			
+
 		}
 	}*/
-			
-
-int mapNum[10][10];
-srand(time(NULL));
-int x;
-int y;
-
-int playerX = (rand() % 10);
-int playerY = (rand() % 10);
-int escapeX = (rand() % 10);
-int escapeY = (rand() % 10);
 
 
+	int mapNum[10][10] = {};
+	srand(time(NULL));
 
 
+	int playerX = (rand() % 10);
+	int playerY = (rand() % 10);
+	int escapeX = (rand() % 10);
+	int escapeY = (rand() % 10);
+	int button = 0;
+	int i = 0;
+	int j = 0;
+	int up = 119;
 
-for (int x = 0; x < 10; x++)
-{
-	for (int y = 0; y < 10; y++)
 
-	{  
+	
+
+	for (int i = 0; i < 1000; i++)
+	{
 		
-     
-		
-		if (playerX == x)
-
+		for (int x = 0; x < 10; x++)
 		{
-			mapNum[x][y] = 65;
 			
+
+			
+			for (int y = 0; y < 10; y++)
+
+			{
+				
+				mapNum[x][y] = 35;
+				mapNum[playerX][playerY] = 80;
+				mapNum[escapeX][escapeY] = 69;
+				
+				
+					
+				
+				
+				cout << (char)mapNum[x][y];
+				
+				if (y == 9)
+
+				{
+					cout << endl;
+					
+				}
+				
+				
+			}
+
+
 		}
 		
+		button = _getch();
+		system("cls");
 
-		else
+		if (button == up)
 		{
-			mapNum[x][y] = 35;
-			
+			playerX -= 1;
 		}
-		 
-		cout << (char)mapNum[x][y];
 
-		
-
-		 if (y == 9)
-
+		if (button == 115)
 		{
-			cout << endl;
+			playerX += 1;
+		}
+
+		if (button == 97)
+		{
+			playerY -= 1;
+		}
+
+		if (button == 100)
+		{
+			playerY += 1;
+		}
+
+		if (mapNum[playerX][playerY] == mapNum[escapeX][escapeY])
+		{
+			cout << "축하합니다! 승리하셨습니다!";
 			break;
 		}
-
-		 
-		 
-		
-
-
+	}
 	}
 	
-	}
-
-
-
-
-
-
-
 
 	
-}
+
+
+
+
 
 /*
 	boolean타입
