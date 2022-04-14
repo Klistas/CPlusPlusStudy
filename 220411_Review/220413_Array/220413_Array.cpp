@@ -46,34 +46,7 @@ int main()
 
 			※ 화면갱신 명령어 : system("cls");
 			
-		
 	
-	mapNum[x][y] = ;
-	for (int i = 0; i < 1; i++)
-				{
-
-
-					button = _getch();
-					system("cls");
-					
-				}
-				if (mapNum[escapeX][escapeY] == mapNum[x][y])
-				{
-					mapNum[x][y] = 66;
-				}
-			 else if (mapNum[playerX][playerY] == mapNum[x][y])
-				 {
-					 mapNum[x][y] = 65;
-					 switch (button)
-		{
-		case 119: playerX - 1;
-
-		case 115: playerX += 1;
-
-		case 97: playerY + 1;
-
-		case 100: playerY += 1;
-		}
 
 	*/
 
@@ -86,9 +59,9 @@ int main()
 
 	for (int i = 5; i > 0; i--)
 	{
-		cout << "미리보는 정답 : " << (char)correctNum << endl << endl;
+		
 		answerNum = _getch();
-
+		system("cls");
 		cout << "정답 : " << answerNum << endl << endl;
 
 		if (answerNum < 95)
@@ -124,7 +97,8 @@ int main()
 		{
 			if (correctNum == (answerNum - 32))
 			{
-				cout << "승리하셨습니다!" << endl;
+				system("cls");
+				cout << "축하합니다^^! 승리하셨습니다!" << endl;
 				break;
 			}
 
@@ -152,81 +126,96 @@ int main()
 			cout << endl;
 
 		}
-	}*/
+	}
+	answerNum = _getch();
+	system("cls");*/
 
 
-	int mapNum[10][10] = {};
+	int mapNum[10][10];
 	srand(time(NULL));
 
 
-	int playerX = (rand() % 10);
-	int playerY = (rand() % 10);
+	int playerX = 0;
+	int playerY = 0;
 	int escapeX = (rand() % 10);
 	int escapeY = (rand() % 10);
-	int button = 0;
-	int i = 0;
-	int j = 0;
-	int up = 119;
-
-
+	int button;
+	int upButton = 119;
+	int downButton = 115;
+	int leftButton = 97;
+	int rightButton = 100;
+	
 	
 
-	for (int i = 0; i < 1000; i++)
+	while (escapeX == 0 && escapeY == 0)
+	{
+		escapeX = (rand() % 10);
+		escapeY = (rand() % 10);
+	}
+		
+	while(1)
 	{
 		
+
 		for (int x = 0; x < 10; x++)
 		{
-			
 
-			
 			for (int y = 0; y < 10; y++)
-
 			{
 				
+
 				mapNum[x][y] = 35;
 				mapNum[playerX][playerY] = 80;
 				mapNum[escapeX][escapeY] = 69;
-				
-				
-					
-				
-				
+							
 				cout << (char)mapNum[x][y];
-				
-				if (y == 9)
 
+				if (y == 9)
 				{
 					cout << endl;
-					
 				}
-				
-				
+
 			}
 
-
 		}
-		
+		cout << "\n\n\n" << "WELCOME TO ESCAPE GAME";
 		button = _getch();
 		system("cls");
-
-		if (button == up)
+		
+		if (button == upButton)
 		{
 			playerX -= 1;
+			if (playerX < 0)
+			{
+				playerX = 0;
+			}
 		}
 
-		if (button == 115)
+		if (button == downButton)
 		{
 			playerX += 1;
+			if (playerX > 9)
+			{
+				playerX = 9;
+			}
 		}
 
-		if (button == 97)
+		if (button == leftButton)
 		{
 			playerY -= 1;
+			if (playerY < 0)
+			{
+				playerY = 0;
+			}
 		}
 
-		if (button == 100)
+		if (button == rightButton)
 		{
 			playerY += 1;
+			if (playerY > 9)
+			{
+				playerY = 9;
+			}
 		}
 
 		if (mapNum[playerX][playerY] == mapNum[escapeX][escapeY])
@@ -234,8 +223,36 @@ int main()
 			cout << "축하합니다! 승리하셨습니다!";
 			break;
 		}
+
 	}
-	}
+
+//	
+//int gugu[8][9];
+//int guguDan;
+//int guguNum;
+//
+//for (guguDan = 0; guguDan < 8; guguDan++)
+//{
+//	
+//	for (guguNum = 0; guguNum < 9; guguNum++)
+//	{
+//		gugu[guguDan][guguNum] = (guguDan + 2) * (guguNum + 1);
+//				
+//					
+//	}
+//	
+//}
+//
+//cout << "몇 단을 볼까요? : ";
+//cin >> guguDan;
+//cout << endl << endl << "몇을 곱할까요? : ";
+//cin >> guguNum;
+//cout << endl << endl << guguDan << " * " << guguNum << " = " << gugu[guguDan - 2][guguNum - 1];
+//
+//
+
+
+}
 	
 
 	
