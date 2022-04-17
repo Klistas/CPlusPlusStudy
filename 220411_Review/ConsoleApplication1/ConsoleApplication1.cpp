@@ -4,7 +4,16 @@
 #include <conio.h>
 using namespace std;
 
+struct monster
+{
+    string name[5];
+    int choice;
+    int attack;
+    int defence;
 
+
+
+}name;
 
 int main()
 {
@@ -95,16 +104,17 @@ int main()
 
 
 
-    srand(time(NULL));
+    /*srand(time(NULL));
     int correctNum = ((rand() % 25) + 65);
     int answerNum;
 
     for (int i = 5; i > 0; i--)
     {
-        cout << "정답 입력 : ";
+        
         answerNum = _getch();
         system("cls");
-        cout << (char)correctNum;
+        cout << "정답 입력 : " << (char)answerNum << endl;
+        
         if (correctNum < 95)
         {
             if (correctNum == answerNum)
@@ -162,12 +172,68 @@ int main()
             cout << "GAME OVER...정답은" << (char)correctNum << "이었습니다." << endl;
         }
 
+    } // 6번
+    
+    */
+    srand(time(NULL));
+    name.attack = (rand() % 1000);
+    name.defence = (rand() % 1000);
+
+    for (int i = 0; i < 5; i++)
+    {
+        cout << "몬스터의 이름을 입력하세요 : ";
+        cin >> name.name[i];
+            
+
     }
+    cout << "출력할 몬스터를 선택하세요...!" << endl;
+    for (int i = 0; i < 5; i++)
+    {
+        
+        cout << i + 1 << ". " << name.name[i] << "  ";
+        
 
+    }
+    
+    
+    cout << endl << "몬스터 선택 : ";
+    cin >> name.choice;
+    cout << endl;
 
+        switch (name.choice)
+        {
+        case 1: name.name[0];
+            cout << "몬스터 이름 : " << name.name[0] << endl;
+            cout << "몬스터 공격력 : " << name.attack << endl;
+            cout << "몬스터 공격력 : " << name.defence << endl;
+            break;
 
+        case 2: name.name[1];
+            cout << "몬스터 이름 : " << name.name[1] << endl;
+            cout << "몬스터 공격력 : " << name.attack << endl;
+            cout << "몬스터 공격력 : " << name.defence << endl;
+            break;
 
+        case 3: name.name[2];
+            cout << "몬스터 이름 : " << name.name[2] << endl;
+            cout << "몬스터 공격력 : " << name.attack << endl;
+            cout << "몬스터 공격력 : " << name.defence << endl;
+            break;
 
+        case 4: name.name[3];
+            cout << "몬스터 이름 : " << name.name[3] << endl;
+            cout << "몬스터 공격력 : " << name.attack << endl;
+            cout << "몬스터 공격력 : " << name.defence << endl;
+            break;
+
+        case 5: name.name[4];
+            cout << "몬스터 이름 : " << name.name[4] << endl;
+            cout << "몬스터 공격력 : " << name.attack << endl;
+            cout << "몬스터 공격력 : " << name.defence << endl;
+            break;
+        } // 7번.
+        
+    
 
 
 
