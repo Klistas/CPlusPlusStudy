@@ -5,24 +5,21 @@ void myprintf(const char* format, ...)
 {
 	va_list args;
 	va_start(args, format);
-	
+	int d[1000];
 	while(*format != '\0')
 	{
 		putchar(*format);
-		if (*format != '%')
+		
+		if (*format == '%')
 		{
 			
 			format++;
 			
-		}
-		else
-		{
 			
 			if (*format == 'd')
 			{
-
-				int d = va_arg(args, int);
-				putchar(d);
+				int count = va_arg(args, int);
+				putchar(d[count]);
 			}
 
 			else if (*format == 'c')
@@ -33,10 +30,16 @@ void myprintf(const char* format, ...)
 
 			else if (*format == 's')
 			{
-				char s = va_arg(args, int);
-				putchar(s);
+				const char *s =  va_arg(args, const char*) ;
+				putchar(*s);
 			}
+			
+
 		}
+		
+			
+		format++;
+		
 		
 		
 	}
@@ -46,6 +49,6 @@ void myprintf(const char* format, ...)
 
 int main(void)
 {
-	myprintf("Hello My Printf : %d, %c, %s", 10, 'H',  'Hell');
+	myprintf("Hello My Printf : %d, %c, %s", 40, 'H', "Hello");
 	return 0;
 }
