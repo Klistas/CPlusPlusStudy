@@ -3,6 +3,8 @@
 #include "Image.h"
 #include "Text.h"
 #include "Input.h"
+
+static char s_path[MAX_PATH];
 bool Renderer_Init(void)
 {
 	SDL_SetHint(SDL_HINT_RENDER_SCALE_QUALITY, "linear");
@@ -98,4 +100,5 @@ void Renderer_DrawRect(int32 x, int32 y, int32 w, int32 h)
 	SDL_Rect rect = { .x = x, .y = y, .w = w, .h = h };
 	SDL_RenderDrawRect(g_App.Renderer, &rect);
 }
+
 

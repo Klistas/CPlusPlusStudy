@@ -9,6 +9,7 @@ typedef struct Image
 	int32				Height;
 	float				ScaleX;
 	float				ScaleY;
+
 } Image;
 
 /// <summary>
@@ -43,4 +44,6 @@ void Image_FreeImage(Image* image);
 /// <param name="alpha">파일 이름</param>
 void Image_SetAlphaValue(Image* image, uint8 alpha);
 
-void Image_Choice(Image* image[]);
+void Image_Choice(Image* image[], int32 Count);
+
+void Image_FadeIn(Image* image, int32 Alpha, int32 AlphaMin, int32 AlphaMax);

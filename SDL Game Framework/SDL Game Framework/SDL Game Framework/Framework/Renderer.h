@@ -60,3 +60,5 @@ void Renderer_DrawTextFade(const struct Text* text, int32 x, int32 y, int32 Alph
 /// <param name="y">ÁÂÇ¥</param>
 /// <param name="foreground">±ÛÀÚÀÇ »ö±ò</param>
 void Renderer_DrawTextBlended(const struct Text* text, int32 x, int32 y, SDL_Color foreground);
+
+

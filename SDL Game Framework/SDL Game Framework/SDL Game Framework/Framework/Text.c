@@ -39,11 +39,27 @@ void Text_CreateText(Text* text, const char* fontFile, int32 fontSize, const wch
 }
 
 
-void Text_CreateMoveText(Text* text, const char* fontFile, int32 fontSize, const wchar_t* str, int32 length, static float timer)
+bool Text_MoveOn(void)
 {
-	static int32 i = 1;
 	static float elapsedTime;
 	elapsedTime += Timer_GetDeltaTime();
+	if (elapsedTime >= 100.0f)
+	{
+		if (Input_GetKeyDown(VK_ESCAPE))
+			elapsedTime = 0.0f;
+		return false;
+	}
+	else
+		return true;
+}
+
+void Text_CreateMoveText(Text* text, const char* fontFile, int32 fontSize, const wchar_t* str, int32 length, static float timer)
+{
+	if (Text_MoveOn() == true)
+	{
+		static int32 i = 1;
+		static float elapsedTime;
+		elapsedTime += Timer_GetDeltaTime();
 		if (elapsedTime >= timer)
 		{
 
@@ -52,9 +68,10 @@ void Text_CreateMoveText(Text* text, const char* fontFile, int32 fontSize, const
 			Text_CreateText(text, fontFile, fontSize, str, i);
 			elapsedTime = 0.0f;
 
-			if (i > length + 3)
-				i = 0;
+			/*if (i > length + 1)
+				i = 0;*/
 		}
+	}
 
 }
 
@@ -114,3 +131,4 @@ void Text_TextChoice(const Text* text, int32 Count)
 
 	}
 }
+

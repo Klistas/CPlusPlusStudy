@@ -249,12 +249,14 @@ void init_main(void)
 	data->Volume = 1.0f;
 
 	data->Speed = 400.0f;
-	data->Alpha = 255;
+
 }
 
 void update_main(void)
 {
+
 	MainSceneData* data = (MainSceneData*)g_Scene.Data;
+
 	
 	if (Input_GetKeyDown('E'))
 	{
@@ -286,6 +288,7 @@ void render_main(void)
 
 
 	MainSceneData* data = (MainSceneData*)g_Scene.Data;
+	Image_FadeIn(&data->BackGround, data->Alpha, 0, 255);
 	Renderer_DrawImage(&data->BackGround, 0, 0);
 	Input_Choice(VK_UP, VK_DOWN);// Count값 조절
 	Text_TextChoice(&data->Text, Count);//텍스트 선택지
@@ -357,15 +360,17 @@ void update_3Scene(void)
 		Text_SetFontStyle(&data->Text[i], FS_BOLD);
 	}
 
-		data->Alpha = Clamp(100, data->Alpha + 1, 255);
-		Image_SetAlphaValue(&data->index3, data->Alpha);
+	
 		
 	if (Input_GetKeyDown(VK_SPACE))
 	{
 		Count++;
-		if(Count == 3)
-		Scene_SetNextScene(SCENE_4);
-	}
+		if (Count == 3)
+		{
+			Scene_SetNextScene(SCENE_4);
+			Count = 0;
+		}
+		}
 	
 }
 
@@ -412,7 +417,7 @@ const wchar_t* str4[] =
 	L"하나뿐인 딸 에이미는 어릴 때부터 아빠와 단 둘이 자라 유독 각별한 부녀애를 가지고 있다.",
 
 };
-
+#define IMAGE_COUNT 3
 typedef struct _4SceneData
 {
 	Text	Text1;
@@ -420,7 +425,7 @@ typedef struct _4SceneData
 	int32	FontSize;
 	int32	RenderMode;
 	Image	index4;
-	Image	choice[];
+	Image	choice[IMAGE_COUNT];
 
 
 
@@ -437,9 +442,9 @@ void init_4Scene(void)
 
 
 	Image_LoadImage(&data->index4, "index4.png");
-	Image_LoadImage(&data->choice[0], "Choice1.png");
-	Image_LoadImage(&data->choice[1], "Choice2.png");
-	Image_LoadImage(&data->choice[2], "Choice3.png");
+	Image_LoadImage(&data->choice[0], "select1.png");
+	Image_LoadImage(&data->choice[1], "select2.png");
+	Image_LoadImage(&data->choice[2], "select3.png");
 
 
 }
